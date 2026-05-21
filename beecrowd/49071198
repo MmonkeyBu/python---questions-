@@ -1,0 +1,17 @@
+linha = list(map(int, input().split()))
+sequencia_positiva = 1
+sequencia_negativa = 1
+
+for i in range(len(linha) - 1):
+    if linha[i] < linha[i+1]:
+        sequencia_negativa = 0
+    elif linha[i] > linha[i+1]:
+        sequencia_positiva = 0
+        
+if(sequencia_negativa):
+    print("D")
+elif(sequencia_positiva):
+    print("C")
+elif(sequencia_positiva == 0 and sequencia_negativa == 0):
+    print("N")
+        
