@@ -1,0 +1,33 @@
+N = int(input())
+tabuleiro = []
+linha = []
+comida_max = 0
+comida_atual = 0
+
+
+for i in range(N):
+    linha = list(input())
+    
+    tabuleiro.append(linha)
+    
+for j in range(N):
+    if(j % 2 == 0):
+        for i in range(len(tabuleiro[j])):
+            if(tabuleiro[j][i] == "o"):
+                comida_atual += 1;
+                comida_max = max(comida_max, comida_atual)
+            elif(tabuleiro[j][i] == "A"):
+                comida_atual = 0;
+    else:
+        for i in range(len(tabuleiro[j]) - 1, -1, -1):
+            if(tabuleiro[j][i] == "o"):
+                comida_atual += 1;
+                if(comida_atual > comida_max):
+                    comida_max = comida_atual
+            elif(tabuleiro[j][i] == "A"):
+                comida_atual = 0;
+                
+print(comida_max)
+                
+            
+
