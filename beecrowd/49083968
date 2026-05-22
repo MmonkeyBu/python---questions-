@@ -1,0 +1,16 @@
+sorteados = set(map(int, input().split()))
+aposta = set(map(int, input().split()))
+numeros_sorteados = 0
+
+numeros_sorteados = len(sorteados & aposta)
+
+if numeros_sorteados < 3:
+    print("azar")
+elif numeros_sorteados == 3:
+    print("terno")
+elif numeros_sorteados == 4:
+    print("quadra")
+elif numeros_sorteados == 5:
+    print("quina")
+elif numeros_sorteados == 6:
+    print("sena")
